@@ -16,8 +16,12 @@
     "vite": "^5.4.21"
   },
   "dependencies": {
+    "@babylonjs/core": "^9.1.0",
+    "@babylonjs/gui": "^9.1.0",
+    "@babylonjs/loaders": "^9.1.0",
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.12.73",
+    "babylonjs": "^9.1.0",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.7.0",
     "react": "^19.2.4",
