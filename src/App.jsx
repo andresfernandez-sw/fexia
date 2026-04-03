@@ -5,10 +5,11 @@ import './App.css';
 
 // Sections
 import Hero from './components/sections/Hero';
-import Problema from './components/sections/Problema';
-import Pilares from './components/sections/Pilares';
-import Proceso from './components/sections/Proceso';
-import Seguridad from './components/sections/Seguridad';
+import Metodologia from './components/sections/Metodologia';
+import AgenteCore from './components/sections/AgenteCore';
+import Orquestacion from './components/sections/Orquestacion';
+import EscudoGobernanza from './components/sections/EscudoGobernanza';
+import ConsultoriaCierre from './components/sections/ConsultoriaCierre';
 
 const Loader = () => (
     <div className="loader-container">
@@ -18,7 +19,7 @@ const Loader = () => (
             transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
             className="loader-logo"
         >
-            FLEXIA
+            FExIA
         </motion.div>
         <div className="loader-progress-bar">
             <motion.div
@@ -33,12 +34,12 @@ const Loader = () => (
 
 const Navbar = () => (
     <nav className="navbar">
-        <a href="#hero" className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>FLEXIA</a>
+        <a href="#hero" className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>FExIA</a>
         <div className="navbar-links">
-            <a href="#problema">Problema</a>
-            <a href="#pilares">Solución</a>
-            <a href="#proceso">Proceso</a>
-            <a href="#seguridad">Seguridad</a>
+            <a href="#metodologia">Metodología</a>
+            <a href="#agente-core">Agente Core</a>
+            <a href="#orquestacion">Orquestación</a>
+            <a href="#gobernanza">Gobernanza</a>
         </div>
         <button className="navbar-cta">Contactar <ChevronRight size={16} /></button>
         <div className="navbar-mobile-menu">
@@ -77,13 +78,14 @@ function App() {
                     >
                         <Navbar />
                         <Hero />
-                        <Problema />
-                        <Pilares />
-                        <Proceso />
-                        <Seguridad />
+                        <Metodologia />
+                        <AgenteCore />
+                        <Orquestacion />
+                        <EscudoGobernanza />
+                        <ConsultoriaCierre />
 
-                        <footer className="footer-simple">
-                            <p>&copy; 2026 Flexia Web — Ecosistema Agéntico Enterprise. Todos los derechos reservados.</p>
+                        <footer className="footer-simple" style={{ textAlign: 'center', marginTop: '4rem' }}>
+                            <p>&copy; 2026 FExIA — Arquitectura y Orquestación Sistémica. Todos los derechos reservados.</p>
                         </footer>
                     </motion.div>
                 )}
