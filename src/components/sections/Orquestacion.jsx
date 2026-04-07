@@ -24,9 +24,10 @@ const Orquestacion = () => {
                             <div key={i} className="step-item" style={{ display: 'flex', gap: '1rem' }}>
                                 <div className="feature-icon" style={{ width: '50px', height: '50px', flexShrink: 0, background: 'rgba(255,255,255,0.03)' }}>{s.icon}</div>
                                 <div>
-                                    <h4 style={{ fontSize: '1.2rem', margin: '0 0 10px 0' }}>{s.title}</h4>
-                                    <p style={{ fontSize: '0.9rem', color: '#888', lineHeight: '1.6' }}>{s.desc}</p>
+                                    <h4 style={{ fontSize: '1.35rem', margin: '0 0 10px 0' }}>{s.title}</h4>
+                                    <p style={{ fontSize: '1.05rem', color: '#888', lineHeight: '1.6' }}>{s.desc}</p>
                                 </div>
+
                             </div>
                         ))}
                     </div>

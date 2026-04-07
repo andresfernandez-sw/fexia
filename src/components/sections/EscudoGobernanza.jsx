@@ -29,9 +29,10 @@ const EscudoGobernanza = () => {
                             <div key={idx} className="seg-item" style={{ display: 'flex', gap: '1.5rem' }}>
                                 <div className="feature-icon" style={{ width: '64px', height: '64px', flexShrink: 0, borderRadius: '12px' }}>{it.icon}</div>
                                 <div>
-                                    <h4 style={{ fontSize: '1.3rem' }}>{it.title}</h4>
-                                    <p style={{ fontSize: '0.95rem', color: '#888', marginTop: '8px', lineHeight: '1.6' }}>{it.desc}</p>
+                                    <h4 style={{ fontSize: '1.45rem' }}>{it.title}</h4>
+                                    <p style={{ fontSize: '1.1rem', color: '#888', marginTop: '8px', lineHeight: '1.6' }}>{it.desc}</p>
                                 </div>
+
                             </div>
                         ))}
                     </div>

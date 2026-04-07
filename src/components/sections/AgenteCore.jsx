@@ -45,9 +45,10 @@ const AgenteCore = () => {
                             <BabylonScene onSceneReady={p.init} />
                         </div>
                         <div className="feature-icon" style={{ width: '45px', height: '45px', borderRadius: '8px' }}>{p.icon}</div>
-                        <h3 style={{ fontSize: '1.4rem' }}>{p.title}</h3>
-                        <p style={{ fontSize: '0.9rem' }}>{p.desc}</p>
+                        <h3 style={{ fontSize: '1.7rem' }}>{p.title}</h3>
+                        <p style={{ fontSize: '1.15rem' }}>{p.desc}</p>
                     </div>
+
                 ))}
             </div>
         </section>

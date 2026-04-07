@@ -25,9 +25,10 @@ const Metodologia = () => {
                             <div key={idx} className="step-item" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                                 <div style={{ width: '6px', height: '6px', background: 'var(--primary)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }} />
                                 <div>
-                                    <h4 style={{ fontSize: '1.2rem' }}>{it.title}</h4>
-                                    <p style={{ fontSize: '0.9rem', color: '#888', marginTop: '5px' }}>{it.desc}</p>
+                                    <h4 style={{ fontSize: '1.35rem' }}>{it.title}</h4>
+                                    <p style={{ fontSize: '1.05rem', color: '#888', marginTop: '5px' }}>{it.desc}</p>
                                 </div>
+
                             </div>
                         ))}
                     </div>

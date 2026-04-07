@@ -179,10 +179,12 @@
     position: relative;
     z-index: 10;
     pointer-events: none;
-    padding: 0 5%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    /* Centering horizontally within the visual-left half */
     height: 100vh;
+    width: 100%;
 }
 
 .hero-text-pane {
@@ -225,12 +227,21 @@
     z-index: 1;
 }
 
-.visual-left,
+.visual-left {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
 .visual-right {
     flex: 1;
     height: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .visual-left::after {
@@ -247,12 +258,27 @@
 .visual-right::after {
     content: 'BABYLON ENGINE';
     position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    font-size: 0.6rem;
-    letter-spacing: 0.2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.1rem;
     color: var(--primary);
-    opacity: 0.3;
+    opacity: 0.2;
+}
+
+.right-visual-wrapper {
+    width: 52%;
+    height: 52%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    background: rgba(10, 10, 24, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 60px;
+    /* Mucho más redondeado, estilo cápsula */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
 }
 
 .hero-spline {

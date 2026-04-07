@@ -17,12 +17,15 @@ const VisualSplit = ({ babylonInit, babylonInitRight, splineScene, height = "100
             {!isFullPage && <div className="pane-separator"></div>}
             <div className="visual-right visual-pane">
                 {babylonInitRight && (
-                    <BabylonScene
-                        className="hero-babylon-right"
-                        onSceneReady={babylonInitRight}
-                    />
+                    <div className="right-visual-wrapper">
+                        <BabylonScene
+                            className="hero-babylon-right"
+                            onSceneReady={babylonInitRight}
+                        />
+                    </div>
                 )}
                 {splineScene && !babylonInitRight && (
+
                     <div className="hero-spline">
                         <Suspense fallback={<div className="loading-placeholder">Loading...</div>}>
                             <Spline scene={splineScene} />
