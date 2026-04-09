@@ -13,19 +13,19 @@ const Orquestacion = () => {
 
     return (
         <section id="orquestacion" className="section container">
-            <div className="section-grid" style={{ alignItems: 'start' }}>
+            <div className="section-grid align-start">
                 <div className="proceso-copy">
                     <div className="status-indicator"><span className="dot"></span> EL ECOSISTEMA</div>
                     <h2 className="terminal-title">Orquestación <span className="highlight">Sistémica.</span></h2>
                     <p className="terminal-desc">La potencia de FExIA reside en la interconexión de especialistas digitales bajo un mando coordinado.</p>
 
-                    <div className="steps-list" style={{ marginTop: '3.5rem', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2.5rem' }}>
+                    <div className="steps-grid">
                         {steps.map((s, i) => (
-                            <div key={i} className="step-item" style={{ display: 'flex', gap: '1rem' }}>
-                                <div className="feature-icon" style={{ width: '50px', height: '50px', flexShrink: 0, background: 'rgba(255,255,255,0.03)' }}>{s.icon}</div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.35rem', margin: '0 0 10px 0' }}>{s.title}</h4>
-                                    <p style={{ fontSize: '1.05rem', color: '#888', lineHeight: '1.6' }}>{s.desc}</p>
+                            <div key={i} className="step-card">
+                                <div className="feature-icon">{s.icon}</div>
+                                <div className="step-card-content">
+                                    <h4>{s.title}</h4>
+                                    <p>{s.desc}</p>
                                 </div>
 
                             </div>
@@ -33,11 +33,11 @@ const Orquestacion = () => {
                     </div>
                 </div>
 
-                <div className="proceso-visual" style={{ position: 'sticky', top: '150px' }}>
-                    <div className="section-visual" style={{ height: '500px' }}>
+                <div className="proceso-visual sticky-visual">
+                    <div className="section-visual-large">
                         <BabylonScene onSceneReady={initProceso} />
                     </div>
-                    <p style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: '#555', fontStyle: 'italic', textAlign: 'center' }}>Visualización de flujo de datos en tiempo real entre sub-agentes.</p>
+                    <p className="visual-caption">Visualización de flujo de datos en tiempo real entre sub-agentes.</p>
                 </div>
             </div>
         </section>

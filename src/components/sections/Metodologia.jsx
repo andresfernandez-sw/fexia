@@ -20,13 +20,13 @@ const Metodologia = () => {
                     <h2 className="terminal-title">Metodología de <span className="highlight">Intervención.</span></h2>
                     <p className="terminal-desc">FExIA no es un producto; es un modelo de transformación operativa basado en el rigor analítico.</p>
 
-                    <div className="steps-list" style={{ marginTop: '3rem', display: 'grid', gap: '2rem' }}>
+                    <div className="steps-list">
                         {items.map((it, idx) => (
-                            <div key={idx} className="step-item" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                                <div style={{ width: '6px', height: '6px', background: 'var(--primary)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }} />
-                                <div>
-                                    <h4 style={{ fontSize: '1.35rem' }}>{it.title}</h4>
-                                    <p style={{ fontSize: '1.05rem', color: '#888', marginTop: '5px' }}>{it.desc}</p>
+                            <div key={idx} className="step-item">
+                                <div className="step-dot" />
+                                <div className="step-content">
+                                    <h4>{it.title}</h4>
+                                    <p>{it.desc}</p>
                                 </div>
 
                             </div>
@@ -34,16 +34,16 @@ const Metodologia = () => {
                     </div>
                 </div>
 
-                <div className="problema-visual-row" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                <div className="problema-visual-row">
                     <div className="comparison-box">
-                        <h4 style={{ marginBottom: '10px', fontSize: '10px', opacity: 0.6 }}>RIGOR ANALÍTICO</h4>
-                        <div className="section-visual" style={{ height: '250px' }}>
+                        <h4 className="label-top">RIGOR ANALÍTICO</h4>
+                        <div className="section-visual-small">
                             <BabylonScene onSceneReady={initTraditional} />
                         </div>
                     </div>
                     <div className="comparison-box active">
-                        <h4 style={{ marginBottom: '10px', fontSize: '10px', color: 'var(--primary)' }}>TRANSFORMACIÓN OPERATIVA</h4>
-                        <div className="section-visual" style={{ height: '250px' }}>
+                        <h4 className="label-top active">TRANSFORMACIÓN OPERATIVA</h4>
+                        <div className="section-visual-small">
                             <BabylonScene onSceneReady={initFexia} />
                         </div>
                     </div>

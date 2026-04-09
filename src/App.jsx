@@ -32,21 +32,46 @@ const Loader = () => (
     </div>
 );
 
-const Navbar = () => (
-    <nav className="navbar">
-        <a href="#hero" className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>FExIA</a>
-        <div className="navbar-links">
-            <a href="#metodologia">Metodología</a>
-            <a href="#agente-core">Agente Core</a>
-            <a href="#orquestacion">Orquestación</a>
-            <a href="#gobernanza">Gobernanza</a>
-        </div>
-        <div></div>
-        <div className="navbar-mobile-menu">
-            <Menu />
-        </div>
-    </nav >
-);
+const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    return (
+        <nav className="navbar">
+            <a href="#hero" className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>FExIA</a>
+            <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+                <a href="#metodologia" onClick={() => setIsMenuOpen(false)}>Metodología</a>
+                <a href="#agente-core" onClick={() => setIsMenuOpen(false)}>Agente Core</a>
+                <a href="#orquestacion" onClick={() => setIsMenuOpen(false)}>Orquestación</a>
+                <a href="#gobernanza" onClick={() => setIsMenuOpen(false)}>Gobernanza</a>
+            </div>
+            <div></div>
+            <div className="navbar-mobile-menu" onClick={() => setIsMenuOpen(true)}>
+                <Menu />
+            </div>
+
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '100%' }}
+                        className="mobile-overlay"
+                    >
+                        <div className="mobile-overlay-close" onClick={() => setIsMenuOpen(false)}>
+                            <div style={{ color: 'white', fontSize: '2rem', cursor: 'pointer' }}>&times;</div>
+                        </div>
+                        <div className="mobile-overlay-links">
+                            <a href="#metodologia" onClick={() => setIsMenuOpen(false)}>Metodología</a>
+                            <a href="#agente-core" onClick={() => setIsMenuOpen(false)}>Agente Core</a>
+                            <a href="#orquestacion" onClick={() => setIsMenuOpen(false)}>Orquestación</a>
+                            <a href="#gobernanza" onClick={() => setIsMenuOpen(false)}>Gobernanza</a>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </nav >
+    );
+};
 
 function App() {
     const [loading, setLoading] = useState(true);

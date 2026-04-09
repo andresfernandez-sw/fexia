@@ -33,20 +33,20 @@ const AgenteCore = () => {
 
     return (
         <section id="agente-core" className="section container">
-            <div className="section-header" style={{ marginBottom: '4rem' }}>
+            <div className="section-header">
                 <div className="status-indicator"><span className="dot"></span> LA UNIDAD DE EJECUCIÓN</div>
                 <h2 className="terminal-title">El Agente <span className="highlight">Core.</span></h2>
             </div>
 
-            <div className="pilares-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            <div className="pilares-grid">
                 {pillars.map((p, idx) => (
-                    <div key={idx} className="feature-card" style={{ padding: '2.5rem' }}>
-                        <div className="pilar-visual-container" style={{ height: '200px', marginBottom: '2rem', borderRadius: '15px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.05)' }}>
+                    <div key={idx} className="feature-card">
+                        <div className="pilar-visual-container">
                             <BabylonScene onSceneReady={p.init} />
                         </div>
-                        <div className="feature-icon" style={{ width: '45px', height: '45px', borderRadius: '8px' }}>{p.icon}</div>
-                        <h3 style={{ fontSize: '1.7rem' }}>{p.title}</h3>
-                        <p style={{ fontSize: '1.15rem' }}>{p.desc}</p>
+                        <div className="feature-icon">{p.icon}</div>
+                        <h3>{p.title}</h3>
+                        <p>{p.desc}</p>
                     </div>
 
                 ))}
