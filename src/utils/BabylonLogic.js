@@ -59,18 +59,32 @@ const setupBaseScene = (engine, canvas, radius = 6) => {
 export const initHero = (engine, canvas) => {
     const { scene } = setupBaseScene(engine, canvas, 7);
     addGlow(scene);
-    addParticles(scene);
+
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    // Reduce particles on mobile
+    if (!isMobile) {
+        addParticles(scene);
+    }
+
+    const nodeCount = isMobile ? 30 : 60;
+    const spreadRange = isMobile ? 6 : 8;
+    const connectionDist = isMobile ? 2.8 : 2.5;
 
     const nodes = [];
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < nodeCount; i++) {
         const node = BABYLON.MeshBuilder.CreateSphere("n" + i, { diameter: 0.12 }, scene);
-        node.position = new BABYLON.Vector3((Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8);
+        node.position = new BABYLON.Vector3(
+            (Math.random() - 0.5) * spreadRange,
+            (Math.random() - 0.5) * spreadRange,
+            (Math.random() - 0.5) * spreadRange
+        );
         nodes.push(node);
     }
 
     for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
-            if (BABYLON.Vector3.Distance(nodes[i].position, nodes[j].position) < 2.5) {
+            if (BABYLON.Vector3.Distance(nodes[i].position, nodes[j].position) < connectionDist) {
                 const line = BABYLON.MeshBuilder.CreateLines("l" + i + j, { points: [nodes[i].position, nodes[j].position] }, scene);
                 line.color = new BABYLON.Color3(0.3, 0.6, 0.6);
                 line.alpha = 0.4;
