@@ -710,16 +710,7 @@
     }
 
     .visual-right {
-        order: 2;
-        min-height: 280px;
-        height: 40vh;
-    }
-
-    .right-visual-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: 100% !important;
-        aspect-ratio: unset !important;
+        display: none !important;
     }
 
     .hero-content-wrapper {
